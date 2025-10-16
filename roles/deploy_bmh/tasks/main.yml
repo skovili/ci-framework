@@ -51,11 +51,11 @@
           }}
         node_user: >-
           {{
-            item.value['username'] if 'username' in item.value else _credentials_content['username']
+            item.value.get('username') if 'username' in item.value else _credentials_content['username']
           }}
         node_password: >-
           {{
-            item.value['password'] if 'password' in item.value else _credentials_content['password']
+            item.value.get('password') if 'password' in item.value else _credentials_content['password']
           }}
         template_name: "bmh-secret"
         manifest_patch: >-
